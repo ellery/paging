@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tone_set_id: 
+  notes: MyString
+  address: MyString
+
+two:
+  tone_set_id: 
+  notes: MyString
+  address: MyString
