@@ -1,0 +1,16 @@
+<%= simple_form_for(@receiver) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :location %>
+    <%= f.input :frequency %>
+    <%= f.association :user %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
+    <%= f.input :haat %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

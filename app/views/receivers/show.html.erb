@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @receiver.location %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @receiver.frequency %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @receiver.user %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @receiver.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @receiver.longitude %>
+</p>
+
+<p>
+  <strong>Haat:</strong>
+  <%= @receiver.haat %>
+</p>
+
+<%= link_to 'Edit', edit_receiver_path(@receiver) %> |
+<%= link_to 'Back', receivers_path %>
