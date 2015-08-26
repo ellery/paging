@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :agencies
+
   resources :receivers
 
   resources :alerts
