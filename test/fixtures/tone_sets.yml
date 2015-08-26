@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  a_tone: 1.5
+  b_tone: 1.5
+  long_tone: 1.5
+  a_tone_time: 1.5
+  b_tone_time: 1.5
+  long_tone_time: 1.5
+  agency_id: 
+
+two:
+  a_tone: 1.5
+  b_tone: 1.5
+  long_tone: 1.5
+  a_tone_time: 1.5
+  b_tone_time: 1.5
+  long_tone_time: 1.5
+  agency_id: 
