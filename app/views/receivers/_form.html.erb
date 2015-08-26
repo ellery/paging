@@ -1,16 +1,40 @@
-<%= simple_form_for(@receiver) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :location %>
-    <%= f.input :frequency %>
-    <%= f.association :user %>
-    <%= f.input :latitude %>
-    <%= f.input :longitude %>
-    <%= f.input :haat %>
+<%= form_for @receiver, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :location, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :location, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :frequency, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :frequency, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :latitude, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :latitude, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :longitude, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :longitude, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :haat, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :haat, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  receivers_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

@@ -1,34 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Receiver -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Receiver %></h1>
+</div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @receiver.location %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:location) %></dt>
+      <dd><pre class="prettyprint"><%= @receiver.location %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:frequency) %></dt>
+      <dd><pre class="prettyprint"><%= @receiver.frequency %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:latitude) %></dt>
+      <dd><pre class="prettyprint"><%= @receiver.latitude %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:longitude) %></dt>
+      <dd><pre class="prettyprint"><%= @receiver.longitude %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:haat) %></dt>
+      <dd><pre class="prettyprint"><%= @receiver.haat %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Frequency:</strong>
-  <%= @receiver.frequency %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              receivers_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_receiver_path(@receiver), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              receiver_path(@receiver),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @receiver.user %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @receiver.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @receiver.longitude %>
-</p>
-
-<p>
-  <strong>Haat:</strong>
-  <%= @receiver.haat %>
-</p>
-
-<%= link_to 'Edit', edit_receiver_path(@receiver) %> |
-<%= link_to 'Back', receivers_path %>

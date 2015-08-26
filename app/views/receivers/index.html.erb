@@ -1,35 +1,44 @@
-<h1>Listing receivers</h1>
-
-<table>
+<%- model_class = Receiver -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Receiver %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Location</th>
-      <th>Frequency</th>
-      <th>User</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Haat</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
+      <th><%= model_class.human_attribute_name(:frequency) %></th>
+      <th><%= model_class.human_attribute_name(:latitude) %></th>
+      <th><%= model_class.human_attribute_name(:longitude) %></th>
+      <th><%= model_class.human_attribute_name(:haat) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @receivers.each do |receiver| %>
       <tr>
+        <td><%= receiver.id %></td>
         <td><%= receiver.location %></td>
         <td><%= receiver.frequency %></td>
-        <td><%= receiver.user %></td>
         <td><%= receiver.latitude %></td>
         <td><%= receiver.longitude %></td>
         <td><%= receiver.haat %></td>
-        <td><%= link_to 'Show', receiver %></td>
-        <td><%= link_to 'Edit', edit_receiver_path(receiver) %></td>
-        <td><%= link_to 'Destroy', receiver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l receiver.created_at, format: :long %></td>
+        <td>
+          <%= link_to receiver_path(receiver), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to receiver_path(receiver), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Receiver', new_receiver_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_receiver_path,
+            :class => 'btn btn-primary' %>
