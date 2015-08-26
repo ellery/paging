@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150826040949) do
+ActiveRecord::Schema.define(version: 20150826053333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 20150826040949) do
     t.float    "haat"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "common_name"
   end
 
   add_index "receivers", ["user_id"], name: "index_receivers_on_user_id", using: :btree
