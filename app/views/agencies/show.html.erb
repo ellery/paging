@@ -1,29 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Agency -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Agency %></h1>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @agency.title %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @agency.title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address) %></dt>
+      <dd><pre class="prettyprint"><%= @agency.address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:city) %></dt>
+      <dd><pre class="prettyprint"><%= @agency.city %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zip) %></dt>
+      <dd><pre class="prettyprint"><%= @agency.zip %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone) %></dt>
+      <dd><pre class="prettyprint"><%= @agency.phone %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @agency.address %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              agencies_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_agency_path(@agency), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              agency_path(@agency),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>City:</strong>
-  <%= @agency.city %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @agency.zip %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @agency.phone %>
-</p>
-
-<%= link_to 'Edit', edit_agency_path(@agency) %> |
-<%= link_to 'Back', agencies_path %>
