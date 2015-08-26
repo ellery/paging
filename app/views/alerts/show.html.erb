@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tone set:</strong>
+  <%= @alert.tone_set %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @alert.notes %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @alert.address %>
+</p>
+
+<%= link_to 'Edit', edit_alert_path(@alert) %> |
+<%= link_to 'Back', alerts_path %>
