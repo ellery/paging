@@ -29,6 +29,7 @@ class ReceiversController < ApplicationController
   # POST /receivers.json
   def create
     @receiver = Receiver.new(receiver_params)
+    @receiver.user = current_user
 
     respond_to do |format|
       if @receiver.save
