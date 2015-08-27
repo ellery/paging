@@ -1,0 +1,19 @@
+<% @receiver.tone_sets.each do |f| 
+ if !f.long_tone.blank? %>
+[Longtone<%= i=+1%>]
+Longtone = <%= f.long_tone %>
+Longtonelength = <%= f.long_tone_time %>
+<% elsif !f.a_tone.blank? && !f.b_tone.blank? %>
+[Tone<%= i=+1%>]
+Atone = <%= f.a_tone %>
+Btone = <%= f.b_tone %>
+Atonelength = <%= f.a_tone_time rescue ".5" %>
+Btonelength = <%= f.b_tone_time rescue "1.2" %>
+<%end %>
+Description = <%= f.agency.title rescue "Unknown Agency" %>
+record_delay = <%= f.record_delay rescue "2.5" %>
+ignore_after = <%= f.ignore_after rescue "60" %>
+<%= f.mp3_emails rescue "" %>
+<%= f.text_emails rescue "" %>
+
+<% end%>
