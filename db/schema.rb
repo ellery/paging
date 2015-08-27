@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150827022825) do
+ActiveRecord::Schema.define(version: 20150827033633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -141,6 +141,8 @@ ActiveRecord::Schema.define(version: 20150827022825) do
     t.integer  "agency_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "record_delay"
+    t.integer  "ignore_after"
   end
 
   add_index "tone_sets", ["agency_id"], name: "index_tone_sets_on_agency_id", using: :btree
