@@ -1,10 +1,13 @@
-<% @receiver.tone_sets.each do |f| 
+
+<%
+i = 0
+ @receiver.tone_sets.each do |f| 
  if !f.long_tone.blank? %>
-[Longtone<%= i=+1 %>]
+[Longtone<%= i += 1 %>]
 Longtone = <%= f.long_tone %>
 Longtonelength = <%= f.long_tone_time %>
 <% elsif !f.a_tone.blank? && !f.b_tone.blank? %>
-[Tone<%= i=+1%>]
+[Tone<%=  i += 1 %>]
 Atone = <%= f.a_tone %>
 Btone = <%= f.b_tone %>
 Atonelength = <%= f.a_tone_time || ".5" rescue ".5" %>
