@@ -7,8 +7,8 @@ Longtonelength = <%= f.long_tone_time %>
 [Tone<%= i=+1%>]
 Atone = <%= f.a_tone %>
 Btone = <%= f.b_tone %>
-Atonelength = <%= f.a_tone_time rescue ".5" %>
-Btonelength = <%= f.b_tone_time rescue "1.2" %>
+Atonelength = <%= f.a_tone_time || ".5" rescue ".5" %>
+Btonelength = <%= f.b_tone_time || "1.2" rescue "1.2" %>
 <%end %>
 Description = <%= f.agency.title rescue "Unknown Agency" %>
 record_delay = <%= f.record_delay rescue "2.5" %>

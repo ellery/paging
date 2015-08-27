@@ -13,6 +13,8 @@ permit_params :a_tone,:b_tone,:long_tone,:a_tone_time,:b_tone_time,:long_tone_ti
 #   permitted
 # end
 
+
+
   form do |f|
     
     f.inputs "Tone Set Configuration" do
