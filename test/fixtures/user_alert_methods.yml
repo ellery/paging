@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  method_type: 1
+  address: MyString
+  user_id: 
+  agency_id: 
+
+two:
+  method_type: 1
+  address: MyString
+  user_id: 
+  agency_id: 
